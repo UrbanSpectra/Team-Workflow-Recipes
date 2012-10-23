@@ -8,7 +8,7 @@ zip		varchar(30) not null,
 zip_type	enum('us', 'intl') not null,
 skype_id	varchar(30) not null,
 role		enum('basic', 'staff', 'ui team', 'dev team', 'admin team') NOT NULL DEFAULT 'basic',
-status		enum('yes', 'no') default 'no',
+status		enum('enabled', 'disabled') default 'disabled',
 github_id	varchar(30),
 ssh_pub_key     text,               -- ?? is there set char length to pub key string
 last_updated   timestamp on update current_timestamp,
@@ -37,22 +37,31 @@ NULL);
 
 
 --  review insert
-SELECT max(contact_id)
+SELECT *
+FROM urbanspectra_contacts
+WHERE contact_id = max(contact_id);
+
+-- target contact_id for verfication and status using first and last name....
+SELECT contact_id
 FROM urbanspectra_contacts
 INTO @cid
+WHERE
+first_name = 'Jeremy'
+AND
+last_name = 'Donson'
 ;
 
 --  after testing email and getting jdonson approval, update account...
 UPDATE urbanspectra_contacts
 SET
 verified_email = 'yes',
-status = 'yes'
+status = 'enabled'
 WHERE
-contact_id = '@cid';
+contact_id = @cid;
 
 --  review verification
 SELECT contact_id, first_name, last_name, verified_email, status
 FROM urbanspectra_contacts
 WHERE contact_id = @cid;
 
---  code above has been tested for syntax
+--  code above has been tested for executable syntax
