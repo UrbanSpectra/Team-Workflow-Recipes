@@ -1,0 +1,58 @@
+CREATE TABLE urbanspectra_contacts(
+contact_id	int unsigned not null primary key auto_increment,
+first_name	varchar(30) not null,
+last_name	varchar(30) not null,
+email		varchar(50) not null,
+verified_email  enum('yes', 'no') default 'no', -- ?? automate process by sending verification link to email
+zip		varchar(30) not null,
+zip_type	enum('us', 'intl') not null,
+skype_id	varchar(30) not null,
+role		enum('basic', 'staff', 'ui team', 'dev team', 'admin team') NOT NULL DEFAULT 'basic',
+status		enum('yes', 'no') default 'no',
+github_id	varchar(30),
+ssh_pub_key     text,               -- ?? is there set char length to pub key string
+last_updated   timestamp on update current_timestamp,
+create_date    timestamp default 0,
+UNIQUE KEY(first_name, last_name)
+)
+;
+
+-- SAMPLE INSERT
+INSERT INTO urbanspectra_contacts
+VALUES
+(NULL,               --  prompts new contact_id
+'Jeremy',
+'Donson',
+'jjdonson@gmail.com',
+NULL,                --  email verification will follow
+'10027',
+'us',
+'jjdonson',
+'admin team',
+NULL,
+'jdonson',
+'ssh-dss AAAAB3NzaC1kc3MAAACBAO0TtakP8jmJ15eSHTgNCsOWS/G38IwLGLWUMwtgnxWapleJ+oi/B2D5Z+aXuKGghaZtmMmk4wTAEUUjTilM9NakUpwWyv2pZTWQIwN5L+wdgHCaRs2rj3rvTfn11aP8l6xGKP0ebh+MjiErSul9NJLnlq9fJZnLnXM/ixD0ueyvAAAAFQDBZ0DOohrIouO5mFYq7Cnt2bxA/QAAAIAVpg6uF6CFRiQv9FmRDsaPFcn6WQ+IcEabWDEQK0V+vJFlhVRk9BGjCkk4L62l8c7B4Dxl7ebn5Lb+OO0vv35PAAVmlTARJmpeG94hC6XYRtt42MPypNqhxCki4e6/sZp75PXQ2lBnJ78rmj//AXrt6SWhybCNRa5AT+ptCsx6WAAAAIBHkYqLfWS4iF79sPCsedOZ1Nvga9dQ4X4pyL56etlbNC+5mmWXn718uN9dXgDCaLu1/znOCrx1gVuw6tiACZU33aOmca010wJq/LwB/Woh8sYLJXpEMlxynIT8JOyCUSuqgnWtBqDbPfV1CFPjK8gCS/dxRwOFq11IC+uyDDShug== macuser@macusers-MacBook-Pro.local',
+NULL,
+NULL);
+
+
+--  review insert
+SELECT max(contact_id)
+FROM urbanspectra_contacts
+INTO @cid
+;
+
+--  after testing email and getting jdonson approval, update account...
+UPDATE urbanspectra_contacts
+SET
+verified_email = 'yes',
+status = 'yes'
+WHERE
+contact_id = '@cid';
+
+--  review verification
+SELECT contact_id, first_name, last_name, verified_email, status
+FROM urbanspectra_contacts
+WHERE contact_id = @cid;
+
+--  code above has been tested for syntax
