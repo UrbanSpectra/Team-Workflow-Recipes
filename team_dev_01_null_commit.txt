@@ -1,0 +1,17 @@
+Hemant Notes:
+
+GitHub ID => ...
+
+Please install this app:
+
+http://windows.github.com/
+
+Then learn about git and github.....
+
+http://urbanspectra.com/media/vids/GIT_VIDEOS.mov
+
+=>  requires quicktime player...  http://support.apple.com/kb/DL837
+
+You have been made a collaborator to a github project:
+
+https://github.com/UrbanSpectra/first-null-commit

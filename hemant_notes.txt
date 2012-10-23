@@ -1,0 +1,41 @@
+Hemant Notes:
+
+GitHub ID => ...
+
+Please install this app:
+
+http://windows.github.com/
+
+Then learn about git and github.....
+
+http://urbanspectra.com/media/vids/GIT_VIDEOS.mov
+
+=>  requires quicktime player...  http://support.apple.com/kb/DL837
+
+You have been made a collaborator to a github project:
+
+https://github.com/UrbanSpectra/first-null-commit
+
+You need to learn to push a "null commit" to that github repo.
+You would clone that github repo to your system using git.
+Add and edit a file.
+Use git to add and commit.
+Then push and submit github credentials.
+And then you would see your commit as the most recent one on this github project repo url:
+https://github.com/UrbanSpectra/first-null-commit
+
+You will need to find gitbash prompt....
+Described here...  https://openhatch.org/missions/windows-setup/install-git-bash
+That shell supports bash and git statements on a command line.
+
+Here is the recipe for first null commit:
+
+1.  cd /path/to/web/root/
+2.  git clone https://github.com/UrbanSpectra/first-null-commit
+3.  cd first-null-commit
+4.  touch null_commit_hemant.txt
+5.  edit that file in editor:  use notepad++  ...  http://notepad-plus-plus.org/
+6.  save that file with a single line and then return to gitbash prompt
+7.  git add .
+8.  git commit -m 'First null commit.'
+9.  git push
