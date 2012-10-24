@@ -1,4 +1,5 @@
-CREATE DATABASE `urbanspectra` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE `urbanspectra`
+/*!40100 DEFAULT CHARACTER SET utf8 */;
 
 USE urbanspectra;
 
@@ -7,7 +8,7 @@ contact_id	int unsigned not null primary key auto_increment,
 first_name	varchar(30) not null,
 last_name	varchar(30) not null,
 email		varchar(50) not null,
-verified_email  enum('yes', 'no') default 'no', -- ?? automate process by sending verification link to email
+email  	enum('yes', 'no') default 'no', -- ?? automate process by sending verification link to email
 zip		varchar(30) not null,
 zip_type	enum('us', 'intl') not null,
 skype_id	varchar(30) not null,
@@ -36,7 +37,7 @@ UrbanSpectra | Contact Info DB  <!--  DYNAMICALLY DERIVED?  -->
 </title>
 </head>
 <body>
-<form action="handle_form.php" method="post">
+<form action="form_handler.php" method="post">
 <fieldset>
 <legend>UrbanSpectra Network Membership Registration</legend>
   * first name: <input type="text" name="first_name" /><p/>
