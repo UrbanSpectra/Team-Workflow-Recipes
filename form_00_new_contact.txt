@@ -1,4 +1,8 @@
-CREATE TABLE urbanspectra_contacts(
+CREATE DATABASE `urbanspectra` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE urbanspectra;
+
+CREATE TABLE contact_info_db(
 contact_id	int unsigned not null primary key auto_increment,
 first_name	varchar(30) not null,
 last_name	varchar(30) not null,
@@ -7,7 +11,7 @@ verified_email  enum('yes', 'no') default 'no', -- ?? automate process by sendin
 zip		varchar(30) not null,
 zip_type	enum('us', 'intl') not null,
 skype_id	varchar(30) not null,
-role		enum('basic', 'staff', 'ui team', 'dev team', 'admin team') NOT NULL DEFAULT 'basic',
+role		enum('basic', 'staff', 'ui team', 'dev team', 'admin team', 'client') NOT NULL DEFAULT 'basic',
 status		enum('enabled', 'disabled') default 'disabled',
 github_id	varchar(30),
 ssh_pub_key     text,               -- ?? is there set char length to pub key string
@@ -15,7 +19,42 @@ last_updated   timestamp on update current_timestamp,
 create_date    timestamp default 0,
 UNIQUE KEY(first_name, last_name)
 )
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8
+COLLATE=utf8_bin COMMENT='Private contact info for all members, staff, etc.' 
 ;
+
+<?php  // form
+$form="
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+UrbanSpectra | Contact Info DB  <!--  DYNAMICALLY DERIVED?  -->
+</title>
+</head>
+<body>
+<form action="handle_form.php" method="post">
+<fieldset>
+<legend>UrbanSpectra Network User Registration</legend>
+  *First Name: <input type="text" name="first_name"><br/>
+  *Last Name: <input type="text" name="last_name"><br/>
+  *Email: <input type="text" name="email"><br/>
+  *Zipcode: <input type="text" name="zip"><br/>
+  *Zip Type: <input type="radio" name="zip_type"><br/>
+  *<a href="http://skype.com">Skype</a> ID:  <input type="text" name="skype_id"><br/>
+  Role:  <input type="select" name="role"><br/>
+  <a href="http://github.com">GitHub</a> ID: <input type="text" name="github_id"><br/>
+  SSH Pub Key:  <input type="text" name="ssh_pub_key"><br/>
+  <input type="submit" value="Submit">
+</fieldset>
+</form>
+</body
+<foot>
+</foot>
+</html>
+"
 
 -- SAMPLE INSERT
 INSERT INTO urbanspectra_contacts
