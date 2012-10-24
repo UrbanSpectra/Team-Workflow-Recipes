@@ -15,6 +15,7 @@ role		enum('basic', 'staff', 'ui team', 'dev team', 'admin team', 'client') NOT 
 status		enum('enabled', 'disabled') default 'disabled',
 github_id	varchar(30),
 ssh_pub_key     text,               -- ?? is there set char length to pub key string
+do_id		varchar(30),
 last_updated   timestamp on update current_timestamp,
 create_date    timestamp default 0,
 UNIQUE KEY(first_name, last_name)
@@ -25,7 +26,7 @@ COLLATE=utf8_bin COMMENT='Private contact info for all members, staff, etc.'
 ;
 
 <?php  // form
-$form="
+$form='
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -37,24 +38,35 @@ UrbanSpectra | Contact Info DB  <!--  DYNAMICALLY DERIVED?  -->
 <body>
 <form action="handle_form.php" method="post">
 <fieldset>
-<legend>UrbanSpectra Network User Registration</legend>
-  *First Name: <input type="text" name="first_name"><br/>
-  *Last Name: <input type="text" name="last_name"><br/>
-  *Email: <input type="text" name="email"><br/>
-  *Zipcode: <input type="text" name="zip"><br/>
-  *Zip Type: <input type="radio" name="zip_type"><br/>
-  *<a href="http://skype.com">Skype</a> ID:  <input type="text" name="skype_id"><br/>
-  Role:  <input type="select" name="role"><br/>
-  <a href="http://github.com">GitHub</a> ID: <input type="text" name="github_id"><br/>
-  SSH Pub Key:  <input type="text" name="ssh_pub_key"><br/>
-  <input type="submit" value="Submit">
+<legend>UrbanSpectra Network Membership Registration</legend>
+  * first name: <input type="text" name="first_name" /><p/>
+  * last name: <input type="text" name="last_name" /><p/>
+  * email: <input type="text" name="email" /><p/>
+  * re-email: <input type="text" name="email2" /><p/>
+  * zipcode: <input type="text" name="zip" /><p/>
+  * zip type: <p/><input type="radio" name="zip_type" value="us" checked /> us<br>
+		 <input type="radio" name="zip_type" value="intl" /> international<p/>
+  * <a href="http://skype.com">skype</a> id:  <input type="text" name="skype_id" /><p/>
+  * role: <p/> <input type="radio" name="role"  value="basic" checked/> basic<br/>
+	<input type="radio" name="role"  value="staff"/> staff<br/>
+	<input type="radio" name="role" value="ui" /> ui team<br/>
+	<input type="radio" name="role" value="dev"/> dev team<br/>
+	<input type="radio" name="role" value="admin"/> admin team<br/>
+        <input type="radio" name="role" value="client"/> client team<br/>
+<p/>
+  <a href="http://github.com">github</a> id: <input type="text" name="github_id" /><p/>
+  <a href="http://www.ece.uci.edu/~chou/ssh-key.html">ssh</a> public key:  <input type="text" name="ssh_pub_key"><p/>
+  <a href="http://drupal.org">drupal</a> id: <input type="text" name="do_id" /><p/>
 </fieldset>
+<input type="submit" value="Submit">
 </form>
 </body
 <foot>
+<p/>
+Questions: Contact <a href="http://urbanspectra.com">UrbanSpectra</a> Management.
 </foot>
 </html>
-"
+';
 
 -- SAMPLE INSERT
 INSERT INTO urbanspectra_contacts
@@ -71,6 +83,7 @@ NULL,                --  email verification will follow
 NULL,
 'jdonson',
 'ssh-dss AAAAB3NzaC1kc3MAAACBAO0TtakP8jmJ15eSHTgNCsOWS/G38IwLGLWUMwtgnxWapleJ+oi/B2D5Z+aXuKGghaZtmMmk4wTAEUUjTilM9NakUpwWyv2pZTWQIwN5L+wdgHCaRs2rj3rvTfn11aP8l6xGKP0ebh+MjiErSul9NJLnlq9fJZnLnXM/ixD0ueyvAAAAFQDBZ0DOohrIouO5mFYq7Cnt2bxA/QAAAIAVpg6uF6CFRiQv9FmRDsaPFcn6WQ+IcEabWDEQK0V+vJFlhVRk9BGjCkk4L62l8c7B4Dxl7ebn5Lb+OO0vv35PAAVmlTARJmpeG94hC6XYRtt42MPypNqhxCki4e6/sZp75PXQ2lBnJ78rmj//AXrt6SWhybCNRa5AT+ptCsx6WAAAAIBHkYqLfWS4iF79sPCsedOZ1Nvga9dQ4X4pyL56etlbNC+5mmWXn718uN9dXgDCaLu1/znOCrx1gVuw6tiACZU33aOmca010wJq/LwB/Woh8sYLJXpEMlxynIT8JOyCUSuqgnWtBqDbPfV1CFPjK8gCS/dxRwOFq11IC+uyDDShug== macuser@macusers-MacBook-Pro.local',
+'jdonson',
 NULL,
 NULL);
 
