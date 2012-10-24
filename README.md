@@ -3,6 +3,8 @@ Team-Workflow-Recipes
 
 UrbanSpectra forms and team workflow recipes for team workflows.
 
+There are three teams:  ui team, devs, admins
+
 1.  README.md => You are here.
 
 2.  form_00_new_contact.txt => contact form for all new members of all types
