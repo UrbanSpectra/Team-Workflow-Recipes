@@ -58,9 +58,7 @@ These are the sections of a recipe:
 
  2.  Take copy of the repo and put it aside...
 
- 3.  ==> git rm -rf *
-
-     ==> git add .
+ 3.  ==> git rm -rf  *
 
      ==> git commit -m 'cleared repo'
  
@@ -72,9 +70,9 @@ These are the sections of a recipe:
 
 6.  Make sure you like the setup...
 
-7.  Then ==> git add .  
+7.  Then ==> git add  .  
   
-    ==> git commit -m "cleared and cleaned up repo"
+    ==> git commit -m  "cleared and cleaned up repo"
 
 
 8.  Verify all in repo
