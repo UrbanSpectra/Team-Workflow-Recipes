@@ -1,0 +1,30 @@
+These are the sections of a recipe:
+
+A. goal = to clean up messy repo
+B. prerequisites = null commit, git installed and github repo access
+ => Request that you are project collaborator on github.
+
+
+C. methods (steps)  = "preserve work, purge all and replace with work at repo root"
+
+Reference this page to help people find gitbash prompt:
+https://openhatch.org/missions/windows-setup/install-git-bash
+
+
+STEPS to 
+1.  $ git clone 
+2.  take copy of temp_priya and put it aside...
+3.  git rm -rf *
+$ git add .
+$ git commit -m 'cleared repo'
+$ git status
+4.  ls
+5.  then add files manually from temp_priya folder you put aside.
+6.  Make sure you like the setup...
+7.  Then git add ., git commit -m "cleared and cleaned up repo"
+8.  Verify all in repo
+D. tests for success = git status and $ ls
+
+ALWAYS use $ ls
+
+and $ git status
