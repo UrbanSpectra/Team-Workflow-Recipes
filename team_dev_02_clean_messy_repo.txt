@@ -1,28 +1,84 @@
 These are the sections of a recipe:
 
-A. goal = to clean up messy repo
-B. prerequisites = null commit, git installed and github repo access
- => Request that you are project collaborator on github.
+*************************************************************************
+****************A. Goal = To clean up messy repo*************************
+*************************************************************************
 
 
-C. methods (steps)  = "preserve work, purge all and replace with work at repo root"
-
-Reference this page to help people find gitbash prompt:
-https://openhatch.org/missions/windows-setup/install-git-bash
 
 
-STEPS to 
-1.  $ git clone 
-2.  take copy of temp_priya and put it aside...
-3.  git rm -rf *
-$ git add .
-$ git commit -m 'cleared repo'
-$ git status
-4.  ls
-5.  then add files manually from temp_priya folder you put aside.
+****************B. PREREQUISITES ****************************************
+
+1.Git installed and github access
+
+  Download Github:  http://windows.github.com/help.html  //Can be downloaded for different servers
+
+  Download Git Bash: https://openhatch.org/missions/windows-setup/install-git-bash   //For linux server commands
+ 
+  
+  *****************GITHUB REPO ACCESS******************************
+
+2.Request that you are project collaborator on github.
+
+  Create an account in www.github.com
+
+3.Login to github            //Installed in the local computer using the username & password created in the www.github.com
+  
+  Clone repo 
+  
+  Copy it to the PHP server   //Eg: C:/xampp/htdocs/repo
+  
+  *****NULL COMMIT TO THE REPO****
+
+  Open gitbash
+
+  ==>cd c:/xampp/htdocs/repo     // Location of the repo in the local server
+  
+  Add a comment in any of the repo files and save
+
+  ==>git status                             //command in the git bash. It shows the changes which made in the repo
+ 
+  ==>git add .                             //git add (space).(period) .This adds the changes
+
+  ==>git commit -m "first null commit"    // This saves the null commit in git bash
+
+  ==>git push                            // It pushes the changes to the github.com
+
+  ==>git status/ls                      //command on git bash to find the current status of the repo
+
+  
+  
+
+
+ ***********PRESERVE WORK,PURGE ALL AND REPLACE WITH AT REPO ROOT****************
+
+ STEPS to follow
+
+ 1.  ==> git clone 
+
+ 2.  Take copy of the repo and put it aside...
+
+ 3.  ==> git rm -rf *
+
+     ==> git add .
+
+     ==> git commit -m 'cleared repo'
+ 
+     ==> git status
+
+4.   ==> ls
+
+5.  Add files manually from your repo folder you put aside.   //Add files from the folder which you kept aside to the root directory
+
 6.  Make sure you like the setup...
-7.  Then git add ., git commit -m "cleared and cleaned up repo"
+
+7.  Then ==> git add .  
+  
+    ==> git commit -m "cleared and cleaned up repo"
+
+
 8.  Verify all in repo
+
 D. tests for success = git status and $ ls
 
 ALWAYS use $ ls
