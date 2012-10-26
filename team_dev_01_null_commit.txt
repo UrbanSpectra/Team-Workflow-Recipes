@@ -20,7 +20,7 @@ c. Then learn about git and github.....   http://urbanspectra.com/media/vids/GIT
 
 Viewing Video on Windows Requires QuickTime Player...  http://support.apple.com/kb/DL837
 
-Here is another source of git basic user information.
+Here is another source of git basic user information ... http://nuclearsquid.com/writings/git-tricks-tips-workflows/
 
 d. Find command line for making git command statements.
 
