@@ -30,7 +30,7 @@ e. OPTIONAL: Location of local XAMP/WAMP/MAMP webroot.  ??
 
 STEPS ON COMMAND LINE:
 
-1.  cd /path/to/local/webroot ; pwd #  Go to local web root and confirm present working directory.
+1.  ?? cd /path/to/local/webroot ; pwd #  Go to local web root and confirm present working directory.
 
 2.  $ git  clone  https://github.com/UrbanSpectra/first-null-commit
 
