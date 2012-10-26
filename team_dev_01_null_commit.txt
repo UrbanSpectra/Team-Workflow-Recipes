@@ -1,17 +1,35 @@
-Hemant Notes:
+GOAL:
 
-GitHub ID => ...
+Learn to clone git projects from github, edit, save, git add, git commit, git status, git log, git push.
 
-Please install this app:
+PREREQUISITES:
 
-http://windows.github.com/
+Get a github.com account and provide it to project manager.
 
-Then learn about git and github.....
+Project manager will make you gitgub code repo project collaborator so that you can push edits to github.
 
-http://urbanspectra.com/media/vids/GIT_VIDEOS.mov
+Please install this windows app:   http://windows.github.com/
 
-=>  requires quicktime player...  http://support.apple.com/kb/DL837
+Here is Mac OS X Equivalent:  https://central.github.com/mac/latest
 
-You have been made a collaborator to a github project:
+Then learn about git and github.....   http://urbanspectra.com/media/vids/GIT_VIDEOS.mov
+
+Viewing Video on Windows Requires QuickTime Player...  http://support.apple.com/kb/DL837
+
+WINDOWS:  FIND GITBASH PROMPT ... https://openhatch.org/missions/windows-setup/install-git-bash
+
+Mac OS X:  Open Terminal OS X Application
+
+STEPS:
+
+ON COMMAND LINE:
+
+1.  cd /path/to/local/webroot ; pwd #  Go to local web root and confirm present working directory.
+
+2.  $ git clone https://github.com/UrbanSpectra/first-null-commit
+
+3.  
+
+TEST FOR SUCCESS:
 
 https://github.com/UrbanSpectra/first-null-commit
