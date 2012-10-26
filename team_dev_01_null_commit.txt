@@ -20,6 +20,8 @@ c. Then learn about git and github.....   http://urbanspectra.com/media/vids/GIT
 
 Viewing Video on Windows Requires QuickTime Player...  http://support.apple.com/kb/DL837
 
+Here is another source of git basic user information.
+
 d. Find command line for making git command statements.
 
 WINDOWS:  FIND GITBASH PROMPT ... https://openhatch.org/missions/windows-setup/install-git-bash
