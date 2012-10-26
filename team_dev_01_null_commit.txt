@@ -1,26 +1,32 @@
-GOAL:
+TEAM DEV RECIPE 01:  'FIRST NULL COMMIT'
+
+PLEASE READ TO THE BOTTOM OF THIS PAGE AND ASK QUESTIONS FOR ANY CLARIFICATIONS!!
+
+TASK GOAL:
 
 Learn to clone git projects from github, edit, save, git add, git commit, git status, git log, git push.
 
 PREREQUISITES:
 
-Get a github.com account and provide it to project manager.
+a. Get a github.com account and provide it to project manager.
 
 Project manager will make you gitgub code repo project collaborator so that you can push edits to github.
 
-Please install this windows app:   http://windows.github.com/
+b. Please install this windows app:   http://windows.github.com/
 
 Here is Mac OS X Equivalent:  https://central.github.com/mac/latest
 
-Then learn about git and github.....   http://urbanspectra.com/media/vids/GIT_VIDEOS.mov
+c. Then learn about git and github.....   http://urbanspectra.com/media/vids/GIT_VIDEOS.mov
 
 Viewing Video on Windows Requires QuickTime Player...  http://support.apple.com/kb/DL837
+
+d. Find command line for making git command statements.
 
 WINDOWS:  FIND GITBASH PROMPT ... https://openhatch.org/missions/windows-setup/install-git-bash
 
 Mac OS X:  Open Terminal OS X Application
 
-OPTIONAL: Location of local XAMP/WAMP/MAMP webroot.
+e. OPTIONAL: Location of local XAMP/WAMP/MAMP webroot.  ??
 
 STEPS ON COMMAND LINE:
 
@@ -32,7 +38,7 @@ STEPS ON COMMAND LINE:
 
 4.  $ git status
 
-5.  EDIT - SAVE
+5.  EDIT - SAVE ??
 
 6.  $ git status
 
@@ -40,8 +46,14 @@ STEPS ON COMMAND LINE:
 
 8.  $ git commit -m "My first null commit to github project repo.  Edited file:  {filename}."
 
+9.  $ git status
+
+10.  $ git push
+
 TEST FOR SUCCESS:
 
 View this url in browser, reload page:  https://github.com/UrbanSpectra/first-null-commit
 
-When you see your own changes recorded at that url, you have completed this task successfully.
+When you see your own changes recorded at that url, you have completed this task successfully.  GOOD JOB!  ;)
+
+Report to project manager if you are stuck or finished.
