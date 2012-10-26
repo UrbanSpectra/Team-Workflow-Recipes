@@ -32,19 +32,19 @@ STEPS ON COMMAND LINE:
 
 1.  cd /path/to/local/webroot ; pwd #  Go to local web root and confirm present working directory.
 
-2.  $ git clone https://github.com/UrbanSpectra/first-null-commit
+2.  $ git  clone  https://github.com/UrbanSpectra/first-null-commit
 
-3.  $ cd first-null-commit
+3.  $ cd  first-null-commit
 
-4.  $ git status
+4.  $ git  status
 
 5.  EDIT - SAVE ??
 
-6.  $ git status
+6.  $ git  status
 
-7.  $ git add .
+7.  $ git add  .
 
-8.  $ git commit -m "My first null commit to github project repo.  Edited file:  {filename}."
+8.  $ git  commit  -m  "My first null commit to github project repo.  Edited file:  {filename}."
 
 9.  $ git status
 
